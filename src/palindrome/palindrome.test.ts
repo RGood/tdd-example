@@ -1,37 +1,36 @@
-import { PalindromeChecker } from './palindrome';
+import { isPalindrome, findPalindromes, isAlphanumericPalindrome } from './palindrome';
 
-describe('PalindromeChecker', () => {
-    let checker: PalindromeChecker;
-
-    beforeEach(() => {
-        checker = new PalindromeChecker();
+describe('Palindrome', () => {
+    describe('isPalindrome', () => {
+        // TODO: Write tests for the isPalindrome function
+        // Requirements to test:
+        // 1. Returns true for palindromes ignoring case, spaces, punctuation, and special characters
+        // 2. Returns false for non-palindromes
+        // 3. Handles empty strings
+        // 4. Handles single characters
+        // 5. Handles mixed case
+        // 6. Handles spaces and punctuation
     });
 
-    // TODO: Write tests for isPalindrome method
-    // Requirements:
-    // 1. Should return true for simple palindromes (e.g., "radar", "level")
-    // 2. Should ignore case (e.g., "Radar", "LEVEL")
-    // 3. Should ignore spaces and punctuation (e.g., "A man, a plan, a canal: Panama")
-    // 4. Should return false for non-palindromes (e.g., "hello", "world")
-    // 5. Should handle empty strings
-    // 6. Should handle single characters
-    // 7. Should handle strings with special characters
+    describe('findPalindromes', () => {
+        // TODO: Write tests for the findPalindromes function
+        // Requirements to test:
+        // 1. Finds all palindrome words in text
+        // 2. Returns empty array when no palindromes found
+        // 3. Handles empty string
+        // 4. Handles single word
+        // 5. Handles multiple palindromes in same text
+        // 6. Ignores case when checking words
+    });
 
-    // TODO: Write tests for findPalindromes method
-    // Requirements:
-    // 1. Should find all palindrome words in a text
-    // 2. Should return empty array if no palindromes found
-    // 3. Should handle empty strings
-    // 4. Should handle text with multiple palindromes
-    // 5. Should handle text with mixed case
-    // 6. Should handle text with punctuation
-
-    // TODO: Write tests for isAlphanumericPalindrome method
-    // Requirements:
-    // 1. Should return true for alphanumeric palindromes (e.g., "A1b2C3c2b1a")
-    // 2. Should ignore non-alphanumeric characters
-    // 3. Should handle empty strings
-    // 4. Should handle single characters
-    // 5. Should handle strings with only numbers
-    // 6. Should handle strings with only letters
+    describe('isAlphanumericPalindrome', () => {
+        // TODO: Write tests for the isAlphanumericPalindrome function
+        // Requirements to test:
+        // 1. Returns true for palindromes considering only letters and numbers
+        // 2. Returns false for non-palindromes
+        // 3. Handles empty strings
+        // 4. Handles single characters
+        // 5. Ignores all non-alphanumeric characters
+        // 6. Handles mixed case
+    });
 }); 

@@ -1,23 +1,22 @@
-import { FizzBuzz } from './fizz-buzz';
+import { convert, generateSequence } from './fizz-buzz';
 
 describe('FizzBuzz', () => {
-    let fizzBuzz: FizzBuzz;
-
-    beforeEach(() => {
-        fizzBuzz = new FizzBuzz();
+    describe('convert', () => {
+        // TODO: Write tests for the convert function
+        // Requirements to test:
+        // 1. Numbers divisible by 3 return "Fizz"
+        // 2. Numbers divisible by 5 return "Buzz"
+        // 3. Numbers divisible by both 3 and 5 return "FizzBuzz"
+        // 4. All other numbers return the number as a string
     });
 
-    // TODO: Write tests for the FizzBuzz converter
-    // Requirements for convert method:
-    // 1. Should return "Fizz" for numbers divisible by 3
-    // 2. Should return "Buzz" for numbers divisible by 5
-    // 3. Should return "FizzBuzz" for numbers divisible by both 3 and 5
-    // 4. Should return the number as a string for numbers not divisible by 3 or 5
-    // 5. Should handle zero and negative numbers appropriately
-
-    // TODO: Write tests for the sequence generator
-    // Requirements for generateSequence method:
-    // 1. Should generate correct sequence from 1 to given number
-    // 2. Should handle zero and negative numbers appropriately
-    // 3. Should return empty array for zero or negative numbers
+    describe('generateSequence', () => {
+        // TODO: Write tests for the generateSequence function
+        // Requirements to test:
+        // 1. Generates sequence from 1 to given number
+        // 2. Each number in sequence follows FizzBuzz rules
+        // 3. Sequence length matches input number
+        // 4. First number is always "1"
+        // 5. Last number follows FizzBuzz rules for input number
+    });
 }); 

@@ -1,20 +1,64 @@
-export class StringCalculator {
-    /**
-     * Add method takes a string of numbers and returns their sum.
-     * Requirements:
-     * 1. Empty string returns 0
-     * 2. Single number returns that number
-     * 3. Two numbers, comma delimited, returns their sum
-     * 4. Multiple numbers, comma delimited, returns their sum
-     * 5. New lines between numbers should be handled as delimiters
-     * 6. Support custom delimiters with format: "//[delimiter]\n[numbers]"
-     * 7. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
-     * 8. Numbers bigger than 1000 should be ignored
-     * 9. Delimiters can be of any length with format: "//[delimiter]\n[numbers]"
-     * 10. Allow multiple delimiters with format: "//[delim1][delim2]\n[numbers]"
-     */
-    add(numbers: string): number {
-        // TODO: Implement the string calculator according to the requirements above
-        return 0;
-    }
+/**
+ * Add method takes an array of number strings and returns their sum.
+ * Requirements:
+ * 1. Empty array returns 0
+ * 2. Single number returns that number
+ * 3. Multiple numbers returns their sum
+ * 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+ * 5. Numbers bigger than 1000 should be ignored
+ * 
+ * @param numbers Array of number strings to add
+ * @returns The sum of the numbers
+ */
+export function add(numbers: string[]): number {
+    throw new Error('Not implemented');
+}
+
+/**
+ * Multiply method takes an array of number strings and returns their product.
+ * Requirements:
+ * 1. Empty array returns 1
+ * 2. Single number returns that number
+ * 3. Multiple numbers returns their product
+ * 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+ * 5. Numbers bigger than 1000 should be ignored
+ * 
+ * @param numbers Array of number strings to multiply
+ * @returns The product of the numbers
+ */
+export function multiply(numbers: string[]): number {
+    throw new Error('Not implemented');
+}
+
+/**
+ * Find the maximum number in the array.
+ * Requirements:
+ * 1. Empty array throws error with message "Cannot find maximum of empty array"
+ * 2. Single number returns that number
+ * 3. Multiple numbers returns the largest number
+ * 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+ * 5. Numbers bigger than 1000 should be ignored
+ * 
+ * @param numbers Array of number strings to find maximum from
+ * @returns The maximum number
+ */
+export function max(numbers: string[]): number {
+    throw new Error('Not implemented');
+}
+
+/**
+ * Calculate the average of the numbers in the array.
+ * Requirements:
+ * 1. Empty array throws error with message "Cannot calculate average of empty array"
+ * 2. Single number returns that number
+ * 3. Multiple numbers returns their average
+ * 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+ * 5. Numbers bigger than 1000 should be ignored
+ * 6. Result should be rounded to 2 decimal places
+ * 
+ * @param numbers Array of number strings to calculate average from
+ * @returns The average of the numbers
+ */
+export function average(numbers: string[]): number {
+    throw new Error('Not implemented');
 }

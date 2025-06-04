@@ -1,22 +1,44 @@
-import { StringCalculator } from './string-calculator';
+import { add, multiply, max, average } from './string-calculator';
 
 describe('StringCalculator', () => {
-    let calculator: StringCalculator;
-
-    beforeEach(() => {
-        calculator = new StringCalculator();
+    describe('add', () => {
+        // TODO: Write tests for the String Calculator
+        // Requirements to test:
+        // 1. Empty array returns 0
+        // 2. Single number returns that number
+        // 3. Multiple numbers returns their sum
+        // 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+        // 5. Numbers bigger than 1000 should be ignored
     });
 
-    // TODO: Write tests for the String Calculator
-    // Requirements:
-    // 1. Empty string returns 0
-    // 2. Single number returns that number
-    // 3. Two numbers, comma delimited, returns their sum
-    // 4. Multiple numbers, comma delimited, returns their sum
-    // 5. New lines between numbers should be handled as delimiters
-    // 6. Support custom delimiters with format: "//[delimiter]\n[numbers]"
-    // 7. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
-    // 8. Numbers bigger than 1000 should be ignored
-    // 9. Delimiters can be of any length with format: "//[delimiter]\n[numbers]"
-    // 10. Allow multiple delimiters with format: "//[delim1][delim2]\n[numbers]"
+    describe('multiply', () => {
+        // TODO: Write tests for the multiply function
+        // Requirements to test:
+        // 1. Empty array returns 1
+        // 2. Single number returns that number
+        // 3. Multiple numbers returns their product
+        // 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+        // 5. Numbers bigger than 1000 should be ignored
+    });
+
+    describe('max', () => {
+        // TODO: Write tests for the max function
+        // Requirements to test:
+        // 1. Empty array throws error with message "Cannot find maximum of empty array"
+        // 2. Single number returns that number
+        // 3. Multiple numbers returns the largest number
+        // 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+        // 5. Numbers bigger than 1000 should be ignored
+    });
+
+    describe('average', () => {
+        // TODO: Write tests for the average function
+        // Requirements to test:
+        // 1. Empty array throws error with message "Cannot calculate average of empty array"
+        // 2. Single number returns that number
+        // 3. Multiple numbers returns their average
+        // 4. Throw exception for negative numbers with message "Negatives not allowed: [negative numbers]"
+        // 5. Numbers bigger than 1000 should be ignored
+        // 6. Result should be rounded to 2 decimal places
+    });
 }); 
