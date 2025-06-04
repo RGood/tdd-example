@@ -21,4 +21,4 @@ export function convert(number: number): string {
  */
 export function generateSequence(upTo: number): string[] {
     throw new Error('Not implemented');
-} 
+}

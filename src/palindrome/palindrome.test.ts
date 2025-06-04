@@ -33,4 +33,4 @@ describe('Palindrome', () => {
         // 5. Ignores all non-alphanumeric characters
         // 6. Handles mixed case
     });
-}); 
+});

@@ -19,4 +19,4 @@ describe('FizzBuzz', () => {
         // 4. First number is always "1"
         // 5. Last number follows FizzBuzz rules for input number
     });
-}); 
+});

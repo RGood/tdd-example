@@ -46,4 +46,4 @@ export function findPalindromes(text: string): string[] {
  */
 export function isAlphanumericPalindrome(text: string): boolean {
     throw new Error('Not implemented');
-} 
+}

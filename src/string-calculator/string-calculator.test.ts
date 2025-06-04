@@ -41,4 +41,4 @@ describe('StringCalculator', () => {
         // 5. Numbers bigger than 1000 should be ignored
         // 6. Result should be rounded to 2 decimal places
     });
-}); 
+});
