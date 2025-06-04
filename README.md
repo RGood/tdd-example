@@ -25,8 +25,8 @@ The project contains three practice problems, each in its own directory:
 ```
 src/
 ├── string-calculator/     # Problem 1: String Calculator
-├── fizz-buzz/            # Problem 2: FizzBuzz
-└── palindrome/           # Problem 3: Palindrome Checker
+├── fizz-buzz/             # Problem 2: FizzBuzz
+└── palindrome/            # Problem 3: Palindrome Checker
 ```
 
 Each problem directory contains:
