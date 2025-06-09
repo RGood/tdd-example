@@ -10,7 +10,13 @@
  * @returns The FizzBuzz string representation of the number
  */
 export function convert(number: number): string {
-    throw new Error('Not implemented');
+    if (number % 3 == 0) {
+        return 'Fizz';
+    else if (number % 5 == 0) {
+        return 'Buzz';
+    } else {
+        return number.toString();
+    }
 }
 
 /**
