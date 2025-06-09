@@ -46,4 +46,9 @@ it ('should generate a sequence from 1 to the given number', () => {
 
     expect(result).toEqual(["1", "2", "Fizz"]);
 });
+it ('should generate a sequence with FizzBuzz rules', () => {
+    const result = generateSequence(5);
+
+    expect(result).toEqual(["1", "2", "Fizz", "4", "Buzz"]);    
+});
 });

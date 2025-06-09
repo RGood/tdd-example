@@ -50,7 +50,30 @@ export function add(numbers: string[]): number {
  * @returns The product of the numbers
  */
 export function multiply(numbers: string[]): number {
-    throw new Error('Not implemented');
+    if (numbers.length === 0) {
+        return 1;
+    }
+
+    const negatives: number[] = [];
+    let product = 1;
+
+    for (const numStr of numbers) {
+        const num = parseInt(numStr, 10);
+        if (isNaN(num)) {
+            continue; // Ignore non-numeric strings
+        }
+        if (num < 0) {
+            negatives.push(num);
+        } else if (num <= 1000) {
+            product *= num;
+        }
+    }
+
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+    }
+
+    return product;
 }
 
 /**
@@ -66,7 +89,30 @@ export function multiply(numbers: string[]): number {
  * @returns The maximum number
  */
 export function max(numbers: string[]): number {
-    throw new Error('Not implemented');
+    if (numbers.length === 0) {
+        throw new Error('Cannot find maximum of empty array');
+    }
+
+    const negatives: number[] = [];
+    let max = Number.NEGATIVE_INFINITY;
+
+    for (const numStr of numbers) {
+        const num = parseInt(numStr, 10);
+        if (isNaN(num)) {
+            continue; // Ignore non-numeric strings
+        }
+        if (num < 0) {
+            negatives.push(num);
+        } else if (num <= 1000) {
+            max = Math.max(max, num);
+        }
+    }
+
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+    }
+
+    return max;
 }
 
 /**
@@ -83,5 +129,30 @@ export function max(numbers: string[]): number {
  * @returns The average of the numbers
  */
 export function average(numbers: string[]): number {
-    throw new Error('Not implemented');
+    if (numbers.length === 0) {
+        throw new Error('Cannot calculate average of empty array');
+    }
+
+    const negatives: number[] = [];
+    let sum = 0;
+    let count = 0;
+
+    for (const numStr of numbers) {
+        const num = parseInt(numStr, 10);
+        if (isNaN(num)) {
+            continue; // Ignore non-numeric strings
+        }
+        if (num < 0) {
+            negatives.push(num);
+        } else if (num <= 1000) {
+            sum += num;
+            count++;
+        }
+    }
+
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+    }
+
+    return parseFloat((sum / count).toFixed(2));
 }

@@ -46,7 +46,17 @@ export function isPalindrome(text: string): boolean {
  * @returns Array of palindrome words found in the text
  */
 export function findPalindromes(text: string): string[] {
-    throw new Error('Not implemented');
+    text.split(' ');
+    const words = text.split(/\s+/); // Split by whitespace
+    const palindromes: string[] = [];
+    for (const word of words) {
+        const cleanedWord = word.replace(/[^a-zA-Z0-9]/g, '').toLowerCase(); // Clean the word
+        if (cleanedWord.length > 1 && isPalindrome(cleanedWord)) {
+            palindromes.push(word); // Add the original word to the result
+        }
+    }
+    return palindromes; // Return the array of palindromes
+
 }
 
 /**
@@ -61,5 +71,21 @@ export function findPalindromes(text: string): string[] {
  * @returns true if the string is a palindrome considering only alphanumeric characters
  */
 export function isAlphanumericPalindrome(text: string): boolean {
-    throw new Error('Not implemented');
+    if (text === '') {
+        return true; // An empty string is considered a palindrome
+    }  
+    else if (text.length === 1) {
+        return true; // A single character is a palindrome
+    }       
+    else if (text.length === 2) {
+        return text[0].toLowerCase() === text[1].toLowerCase();
+    } 
+    else if (text.length > 2) {
+        const cleanedText = text
+            .replace(/[^a-zA-Z0-9]/g, '') // Remove non-alphanumeric characters
+            .toLowerCase(); // Convert to lowercase
+        const reversedText = cleanedText.split('').reverse().join('');
+        return cleanedText === reversedText; // Check if cleaned text is the same forwards and backwards
+    }
+    return false; // Default case, should not be reached
 }
