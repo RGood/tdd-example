@@ -10,9 +10,11 @@
  * @returns The FizzBuzz string representation of the number
  */
 export function convert(number: number): string {
-    if (number % 3 == 0) {
+    if (number % 3 == 0 && number % 5 == 0) {
+        return 'FizzBuzz';
+    } else if (number % 3 == 0) {
         return 'Fizz';
-    else if (number % 5 == 0) {
+    } else if (number % 5 == 0) {
         return 'Buzz';
     } else {
         return number.toString();
@@ -26,5 +28,5 @@ export function convert(number: number): string {
  * @returns An array of FizzBuzz strings
  */
 export function generateSequence(upTo: number): string[] {
-    throw new Error('Not implemented');
+    return Array.from({ length: upTo }, (_, i) => convert(i + 1));
 }

@@ -31,7 +31,7 @@ describe('FizzBuzz', () => {
 
             expect(result).toBe('7');
         });
-
+    });
     describe('generateSequence', () => {
         // TODO: Write tests for the generateSequence function
         // Requirements to test:
@@ -40,5 +40,10 @@ describe('FizzBuzz', () => {
         // 3. Sequence length matches input number
         // 4. First number is always "1"
         // 5. Last number follows FizzBuzz rules for input number
+        it('should generate a sequence from 1 to the given number', () => {
+            const result = generateSequence(5);
+
+            expect(result).toEqual(['1', '2', 'Fizz', '4', 'Buzz']);
+        });
     });
 });
