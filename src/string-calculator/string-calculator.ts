@@ -11,7 +11,30 @@
  * @returns The sum of the numbers
  */
 export function add(numbers: string[]): number {
-    throw new Error('Not implemented');
+    if (numbers.length === 0) {
+        return 0;
+    }
+
+    const negatives: number[] = [];
+    let sum = 0;
+
+    for (const numStr of numbers) {
+        const num = parseInt(numStr, 10);
+        if (isNaN(num)) {
+            continue; // Ignore non-numeric strings
+        }
+        if (num < 0) {
+            negatives.push(num);
+        } else if (num <= 1000) {
+            sum += num;
+        }
+    }
+
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+    }
+
+    return sum;
 }
 
 /**

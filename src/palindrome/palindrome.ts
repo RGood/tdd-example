@@ -15,8 +15,24 @@
  * @returns true if the string is a palindrome, false otherwise
  */
 export function isPalindrome(text: string): boolean {
-    throw new Error('Not implemented');
-}
+    if (text === '') {
+        return true; // An empty string is considered a palindrome
+    }   
+    else if (text.length === 1) {
+        return true; // A single character is a palindrome
+    }   
+    else if (text.length === 2) {
+        return text[0].toLowerCase() === text[1].toLowerCase();
+    }
+    else if (text.length > 2) {
+        const cleanedText = text
+            .replace(/[^a-zA-Z0-9]/g, '') // Remove non-alphanumeric characters
+            .toLowerCase(); // Convert to lowercase
+        const reversedText = cleanedText.split('').reverse().join('');
+        return cleanedText === reversedText; // Check if cleaned text is the same forwards and backwards
+    }
+    return false; // Default case, should not be reached
+};
 
 /**
  * Finds all palindromes in a given text.

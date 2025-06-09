@@ -10,8 +10,10 @@ describe('Palindrome', () => {
         // 4. Handles single characters
         // 5. Handles mixed case
         // 6. Handles spaces and punctuation
-    });
-
+        it ('should return false if not a palindrome', () => {
+            expect(isPalindrome('jhenelle')).toBe(true);
+        });
+    })
     describe('findPalindromes', () => {
         // TODO: Write tests for the findPalindromes function
         // Requirements to test:
