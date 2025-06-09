@@ -15,7 +15,13 @@
  * @returns true if the string is a palindrome, false otherwise
  */
 export function isPalindrome(text: string): boolean {
-    throw new Error('Not implemented');
+    // Normalize the string: remove non-alphanumeric characters and convert to lowercase
+    const normalizedText = text
+        .replace(/[^a-z0-9]/gi, '') // Remove non-alphanumeric characters
+        .toLowerCase(); // Convert to lowercase
+    // Check if the normalized string is equal to its reverse
+    const reversedText = normalizedText.split('').reverse().join('');
+    return normalizedText === reversedText;
 }
 
 /**
@@ -30,7 +36,17 @@ export function isPalindrome(text: string): boolean {
  * @returns Array of palindrome words found in the text
  */
 export function findPalindromes(text: string): string[] {
-    throw new Error('Not implemented');
+    // Normalize the text: split into words, remove non-alphanumeric characters, and convert to lowercase
+    const words = text
+        .split(/\s+/) // Split by whitespace
+        .map(word => word.replace(/[^a-z0-9]/gi, '').toLowerCase()) // Remove non-alphanumeric characters and convert to lowercase
+        .filter(word => word.length > 0); // Filter out empty words
+
+    // Find palindromes in the normalized words
+    return words.filter(word => {
+        const reversedWord = word.split('').reverse().join('');
+        return word === reversedWord;
+    });
 }
 
 /**
@@ -45,5 +61,11 @@ export function findPalindromes(text: string): string[] {
  * @returns true if the string is a palindrome considering only alphanumeric characters
  */
 export function isAlphanumericPalindrome(text: string): boolean {
-    throw new Error('Not implemented');
+    // Normalize the string: remove non-alphanumeric characters and convert to lowercase
+    const normalizedText = text
+        .replace(/[^a-z0-9]/gi, '') // Remove non-alphanumeric characters
+        .toLowerCase(); // Convert to lowercase
+    // Check if the normalized string is equal to its reverse
+    const reversedText = normalizedText.split('').reverse().join('');
+    return normalizedText === reversedText;
 }
