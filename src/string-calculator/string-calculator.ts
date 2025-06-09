@@ -11,6 +11,26 @@
  * @returns The sum of the numbers
  */
 export function add(numbers: string[]): number {
+    const negatives: string[] = [];
+    if (numbers.length === 0) {
+        return 0;
+    }else if (numbers.length === 1) {
+        return parseInt(numbers[0], 10);
+    }else if (numbers.length > 1) {
+        let sum =0;
+        for (const num of numbers) {
+            const parsedNum = parseInt(num, 10);
+            if (parsedNum < 0) {
+                negatives.push(num);
+            } else if (parsedNum <= 1000) {
+                sum += parsedNum;
+            }
+        }
+        if (negatives.length > 0) {
+            throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+        }
+        return sum;
+    }
     throw new Error('Not implemented');
 }
 
@@ -27,7 +47,37 @@ export function add(numbers: string[]): number {
  * @returns The product of the numbers
  */
 export function multiply(numbers: string[]): number {
+    const negatives: string[] = [];
+    if (numbers.length === 0){
+        return 1;
+    }else if (numbers.length === 1){
+        return parseInt(numbers[0], 10);
+    }else if (numbers.length > 1){
+        let result: number = 0;
+        for (const num of numbers) {
+            const parsedNum = parseInt(num, 10);
+            if (parsedNum < 0) {
+                negatives.push(num);
+            } else if (parsedNum <= 1000) {
+                if (!result) {
+                    result = parsedNum;
+                } else {
+                    result *= parsedNum;
+                }
+            }
+        }
+        if (negatives.length > 0) {
+            throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+        }
+        if (result === 0) {
+            return 0; // If no valid numbers were multiplied, return 0
+
+        }
+        return result;
+    }
+
     throw new Error('Not implemented');
+
 }
 
 /**
@@ -43,6 +93,24 @@ export function multiply(numbers: string[]): number {
  * @returns The maximum number
  */
 export function max(numbers: string[]): number {
+    if (numbers.length === 0) {
+        throw new Error('Cannot find maximum of empty array');
+    } else if (numbers.length === 1) {
+        return parseInt(numbers[0], 10);
+    }else if (numbers.length > 1) {
+        let max:number = 0;
+        for (const num of numbers) {
+            const parsedNum = parseInt(num, 10);
+            if (parsedNum < 0) {
+                throw new Error(`Negatives not allowed: ${num}`);
+            } else if (parsedNum <= 1000) {
+                if (max === 0 || parsedNum > max) {
+                    max = parsedNum;
+                }
+            }
+        }
+        return max;
+    }
     throw new Error('Not implemented');
 }
 
@@ -60,5 +128,31 @@ export function max(numbers: string[]): number {
  * @returns The average of the numbers
  */
 export function average(numbers: string[]): number {
+    if(numbers.length === 0){
+        throw new Error('Cannot calculate average of empty array');
+    }else if (numbers.length === 1) {
+        return parseFloat(numbers[0]);
+    }else if (numbers.length > 1) {
+        const negatives: string[] = [];
+        let sum = 0;
+        let count = 0;
+
+        for (const num of numbers) {
+            const parsedNum = parseFloat(num);
+            if (parsedNum < 0) {
+                negatives.push(num);
+            } else if (parsedNum <= 1000) {
+                sum += parsedNum;
+                count++;
+            }
+        }
+        if (negatives.length > 0) {
+            throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+        }
+        if (count === 0) {
+            return 0; // If no valid numbers were found, return 0
+        }
+        return parseFloat((sum / count).toFixed(2));
+    }
     throw new Error('Not implemented');
 }
