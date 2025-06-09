@@ -10,7 +10,15 @@
  * @returns The FizzBuzz string representation of the number
  */
 export function convert(number: number): string {
-    throw new Error('Not implemented');
+    if (number % 15 === 0) { // Check for divisibility by both 3 and 5 (15) first
+        return "FizzBuzz";
+    } else if (number % 3 === 0) { // Check for divisibility by 3
+        return "Fizz";
+    } else if (number % 5 === 0) { // Check for divisibility by 5
+        return "Buzz";
+    } else { // All other numbers
+        return String(number);
+    }
 }
 
 /**
@@ -20,5 +28,11 @@ export function convert(number: number): string {
  * @returns An array of FizzBuzz strings
  */
 export function generateSequence(upTo: number): string[] {
-    throw new Error('Not implemented');
+    const result: string[] = [];
+    for (let i = 1; i <= upTo; i++) {
+        const fizzBuzzValue = convert(i);
+        result.push(fizzBuzzValue);
+    }
+
+    return result;
 }

@@ -2,12 +2,33 @@ import { convert, generateSequence } from './fizz-buzz';
 
 describe('FizzBuzz', () => {
     describe('convert', () => {
-        // TODO: Write tests for the convert function
-        // Requirements to test:
         // 1. Numbers divisible by 3 return "Fizz"
+        it('should return "Fizz" for numbers divisible by 3', () => {
+            expect(convert(3)).toBe('Fizz');
+            expect(convert(6)).toBe('Fizz');
+            expect(convert(9)).toBe('Fizz');
+        });
+
         // 2. Numbers divisible by 5 return "Buzz"
+        it('should return "Buzz" for numbers divisible by 5', () => {
+            expect(convert(5)).toBe('Buzz');
+            expect(convert(10)).toBe('Buzz');
+            expect(convert(20)).toBe('Buzz');
+        });
+
         // 3. Numbers divisible by both 3 and 5 return "FizzBuzz"
+        it('should return "FizzBuzz" for numbers divisible by both 3 and 5', () => {
+            expect(convert(15)).toBe('FizzBuzz');
+            expect(convert(30)).toBe('FizzBuzz');
+        });
+
         // 4. All other numbers return the number as a string
+        it('should return the number as a string for other numbers', () => {
+            expect(convert(1)).toBe('1');
+            expect(convert(2)).toBe('2');
+            expect(convert(4)).toBe('4');
+            expect(convert(7)).toBe('7');
+        });
     });
 
     describe('generateSequence', () => {
@@ -18,5 +39,10 @@ describe('FizzBuzz', () => {
         // 3. Sequence length matches input number
         // 4. First number is always "1"
         // 5. Last number follows FizzBuzz rules for input number
+
+        it("should generate a sequence from 1 to a given number", () => {
+            const result = generateSequence(3);
+            expect(result).toEqual(["1", "2", "Fizz"]);
+        });
     });
 });
