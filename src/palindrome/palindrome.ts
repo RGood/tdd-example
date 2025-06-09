@@ -15,6 +15,9 @@
  * @returns true if the string is a palindrome, false otherwise
  */
 export function isPalindrome(text: string): boolean {
+    const cleanedText = text.toLowerCase().replace(/\s/g, "").replace(/[^a-zA-Z0-9]/g, "");
+    const reversedText = cleanedText.split('').reverse().join('');
+    return cleanedText === reversedText;
     throw new Error('Not implemented');
 }
 
@@ -30,6 +33,14 @@ export function isPalindrome(text: string): boolean {
  * @returns Array of palindrome words found in the text
  */
 export function findPalindromes(text: string): string[] {
+    const words: string[] = text.toLowerCase().match(/\b[a-zA-Z0-9]+\b/g) || [];
+    const palindromes: string[] = [];
+    for (const word of words) {
+        if (isPalindrome(word)) {
+            palindromes.push(word);
+        }
+    }
+    return palindromes;
     throw new Error('Not implemented');
 }
 
